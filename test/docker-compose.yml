@@ -1,0 +1,13 @@
+services:
+  serve:
+    restart: always
+    image: whatwewant/serve:${SERVICE_SERVE_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_SERVE_PORT
+      USERNAME: ${SERVICE_SERVE_USERNAME}
+      PASSWORD: ${SERVICE_SERVE_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
